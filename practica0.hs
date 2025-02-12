@@ -11,7 +11,6 @@ buscar (x:xs) n
     | otherwise = buscar xs n
 
 -- Función sumar_lista: Dada una lista de enteros, regresa la suma de sus elementos.
--- Se implementa con recursión de cola usando un acumulador.
 sumar_lista :: [Int] -> Int
 sumar_lista xs = sumar_aux xs 0
   where
@@ -105,8 +104,7 @@ dfs graph v visited
 
 -- Función auxiliar para obtener todos los vértices de una gráfica
 vertices :: Graph -> [Vertex]
-vertices [] = []
-vertices ((v,_):gs) = v : vertices gs
+vertices = map fst
 
 -- Función auxiliar para verificar si hay ciclos usando DFS (Búsqueda en Profundidad)
 -- Un ciclo existe si encontramos un vértice que ya está en la pila de recursión
